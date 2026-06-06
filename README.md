@@ -1,93 +1,32 @@
-# 📌 Predicting Diabetes Using Machine Learning
+# Predicting Diabetes Using Machine Learning
 
-**A Data Mining Principles project focused on predicting diabetes using machine learning models.**  
-This study applies various ML techniques to predict diabetes, using the **Pima Indians Diabetes Dataset**.
+Classification of diabetes risk on the Pima Indians Diabetes Dataset, comparing four ML models in R. Data Mining Principles project, Bucharest University of Economic Studies (2025).
 
----
+## Key Findings
 
-## 📂 Project Overview
+- **Logistic Regression** gave the best overall performance.
+- **Glucose** and **BMI** were the strongest predictors.
+- The dataset contains class imbalance across several variables.
 
-- **Authors**: Ariton Alexandru, Bucur Alexia-Gabriela, Coman Alex, Cojocaru Florin  
-- **Institution**: Bucharest University of Economic Studies  
-- **Year**: 2025  
-- **Dataset**: [Pima Indians Diabetes Dataset (Kaggle)](https://www.kaggle.com/uciml/pima-indians-diabetes-database)
+## Methods
 
----
+- Target encoded as factor (pos/neg); 70/30 train/test split
+- Missing-value and outlier handling
+- Univariate/bivariate analysis and correlation matrix (`corrplot`)
+- Models: Random Forest, XGBoost, KNN, Logistic Regression
+- Evaluation: sensitivity, specificity, precision, recall, F1, ROC/AUC, confusion matrix
 
-## 🛠 Setup & Dependencies
+## Setup
 
-### 🔹 Required R Packages:
 ```r
 install.packages(c("caret", "tidyverse", "MASS", "mlbench", "summarytools",
-                   "corrplot", "gridExtra", "timeDate", "pROC", "caTools", 
+                   "corrplot", "gridExtra", "timeDate", "pROC", "caTools",
                    "rpart.plot", "e1071", "graphics"))
-```
-
-### 🔹 Installation Steps:
-1. Install the required R packages listed above.
-2. Download the dataset and place it in the working directory.
-3. Run the R script:
-   ```r
-   source("cod.R")
-   ```
-
----
-
-## 🔍 Data Analysis
-
-### **Preprocessing**
-✔ Convert diabetes column to **factor** (pos/neg)  
-✔ Split dataset into **training (70%)** and **testing (30%)**  
-✔ Handle **missing values** and **outliers**  
-
-### **Visualization**
-📊 Univariate and Bivariate Analysis  
-📉 Correlation Matrix with `corrplot`  
-
-### **Machine Learning Models**
-✅ **Random Forest**  
-✅ **XGBoost**  
-✅ **K-Nearest Neighbors (KNN)**  
-✅ **Logistic Regression**  
-
-### **Performance Metrics**
-📌 Sensitivity, Specificity, Precision, Recall, F1 Score  
-📈 ROC Curve & AUC, Confusion Matrix  
-
----
-
-## 🎯 Usage
-
-To run the full pipeline:
-```r
 source("cod.R")
 ```
 
-### **Expected Outputs**
-✔ Model comparison plots  
-✔ Performance metrics  
-✔ ROC curves & confusion matrices  
+Dataset: [Pima Indians Diabetes (Kaggle)](https://www.kaggle.com/uciml/pima-indians-diabetes-database) — place in the working directory before running.
 
----
+## Authors
 
-## 📊 Results & Conclusion
-
-### **Key Findings**
-✔ **Logistic Regression** performed the best  
-✔ **Glucose & BMI** are strong predictors of diabetes  
-✔ The dataset contains some **imbalanced variables**  
-
-### **Future Work**
-🚀 Experiment with **Deep Learning** models (e.g., Neural Networks)  
-⚙️ Improve **Feature Engineering**  
-⚖️ Address **Class Imbalance** using **SMOTE**  
-
----
-
-👥 Contributors:  
-- Ariton Alexandru  
-- Bucur Alexia-Gabriela  
-- Coman Alex  
-- Cojocaru Florin  
-
----
+Ariton Alexandru, Bucur Alexia-Gabriela, Coman Alex, Cojocaru Florin
